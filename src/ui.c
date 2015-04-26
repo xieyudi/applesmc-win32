@@ -45,19 +45,19 @@ static int ui_monitor()
 	
 	system("cls");
 	
-	while(1)
+	while (1)
 	{
 		pos.Y = 0;
 		SetConsoleCursorPosition(hdl,pos);
 		
 		/* print fan speed */
-		for(i = 0; i < smcreg.fan_count; i++)
+		for (i = 0; i < smcreg.fan_count; i++)
 		{
 			speed_act = applesmc_show_fan_speed(i, 0, NULL);
 			speed_min = applesmc_show_fan_speed(i, 1, NULL);
 			speed_max = applesmc_show_fan_speed(i, 2, NULL);
 			printf("fan%d:%12d RPM  (min = %8d RPM, max = %8d RPM)", i, speed_act, speed_min, speed_max);
-			if(toggle)
+			if (toggle)
 				printf("*\n");
 			else
 				printf(" \n");
@@ -67,15 +67,12 @@ static int ui_monitor()
 		for (i = 0; i < smcreg.temp_count; i++)
 		{
 			applesmc_show_sensor_label(i, buf);
-			if(!strcmp(buf, "(null)"))
-			{
+			if (!strcmp(buf, "(null)")) {
 				printf("                               \n");
-			}
-			else
-			{
+			} else {
 				temp = applesmc_show_temperature(i, NULL);
 				printf("%s:%12.1fC", buf, (float)(temp/1000));
-				if(toggle)
+				if (toggle)
 					printf("*                              \n");
 				else
 					printf("                               \n");
