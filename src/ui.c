@@ -200,7 +200,7 @@ help:
 			"  example:\n"
 			"    I have 2 fans, and I want to set them to manual, with speed of 5500 and 6000 respectively:\n"
 			"      \"applesmc-win32.exe f y 2 5500 6000\"\n"
-			"    to reverse back to auto (default):\n"
+			"    to revert back to auto (default):\n"
 			"      \"applesmc-win32.exe f n\"\n");
 	return -1;
 	
