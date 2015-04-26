@@ -163,19 +163,19 @@ int main(int argc, char *argv[])
 			
 			for (i = 0; i < num; i++) {
 			ret = sscanf(argv[i+4], "%d", &speed[i]);
-			if(EOF == ret)
+			if (EOF == ret)
 				goto help;
 			}
 			
 			ret = ui_fanspeed(num, 1, speed);
-			if(ret)
+			if (ret)
 				goto error;
 			
 			free(speed);
 		}
 		else if (argv[2][0] == 'n') {
 			ret = ui_fanspeed(num, 0, speed);
-			if(ret)
+			if (ret)
 				goto error;
 		}
 		else
