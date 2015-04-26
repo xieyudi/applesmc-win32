@@ -1,0 +1,58 @@
+ABOUT
+    Windows User Space AppleSMC Driver (64-bit only)
+	
+COMPILE
+    compile "applesmc-win32.c" "ui.c" and link against "inpoutx64.dll"
+
+INSTALL:
+    1. Having the TESTSIGNING boot configuration option set.
+        see https://msdn.microsoft.com/en-us/library/windows/hardware/ff553484%28v=vs.85%29.aspx
+    2. Read section USAGE
+	3. Ready to use.
+	
+USAGE
+	applesmc-win32 [m|f ...]
+	m                                             monitor sensors
+	f <y|n> <num> <s0> ... <sn> ... <snum-1>      set fan speed manually
+		<y|n>                                     y=manual, n=auto
+		<num>                                     number of fans installed
+		<sn>                                      speed of fan n, n in the range of 0 to num-1
+	
+	example:
+		I have 2 fans, and I want to set them to manual, with speed of 5500 and 6000 respectively:
+		    "applesmc-win32.exe f y 2 5500 6000"
+		to reverse back to auto (default):
+		    "applesmc-win32.exe f n"
+
+NOTICE
+    Use at your own risk.
+	
+COPYRIGHT
+    Copyright (C) 2015 Yudi Xie <xieyudi1990@gmail.com>
+	
+    Based on InpOutx64
+    Copyright Logix4U & Phillip Gibbons [Highresolution Enterprises]
+    
+    Based on applesmc.c Linux kernel driver
+    Copyright (C) 2007 Nicolas Boichat <nicolas@boichat.ch>
+    Copyright (C) 2010 Henrik Rydberg <rydberg@euromail.se>
+    
+    Based on hdaps.c driver:
+    Copyright (C) 2005 Robert Love <rml@novell.com>
+    Copyright (C) 2005 Jesper Juhl <jj@chaosbits.net>
+    
+    Fan control based on smcFanControl:
+    Copyright (C) 2006 Hendrik Holtmann <holtmann@mac.com>
+    
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of the GNU General Public License v2 as published by the
+    Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+    more details.
+    
+    You should have received a copy of the GNU General Public License along with
+    this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
