@@ -19,7 +19,7 @@ USAGE
 		<sn>                                      speed of fan n, n in the range of 0 to num-1
 	
 	example:
-		I have 2 fans, and I want to set them to manual, with speed of 5500 and 6000 respectively:
+		Suppose having 2 fans, to set them to manual, with speed of 5500 and 6000 respectively:
 		    "applesmc-win32.exe f y 2 5500 6000"
 		to reverse back to auto (default):
 		    "applesmc-win32.exe f n"
