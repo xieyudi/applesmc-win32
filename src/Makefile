@@ -3,7 +3,7 @@ CROSS_COMPILE=x86_64-w64-mingw32-
 CC=gcc
 LD=gcc
 CFLAGS=-std=c99
-LDFLAGS=-L./ -linpoutx64
+LDFLAGS=-s -L./ -linpoutx64
 SRC=applesmc-win32.c ui.c
 OBJ=applesmc-win32.o ui.o
 EXE=applesmc-win32.exe
