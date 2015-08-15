@@ -5,9 +5,9 @@ COMPILE
     compile "applesmc-win32.c" "ui.c" and link against "inpoutx64.dll"
 
 INSTALL:
-    1. Having the TESTSIGNING boot configuration option set.
-        see https://msdn.microsoft.com/en-us/library/windows/hardware/ff553484%28v=vs.85%29.aspx
-    2. Read section USAGE
+	1. Having the TESTSIGNING boot configuration option set.
+        	see https://msdn.microsoft.com/en-us/library/windows/hardware/ff553484%28v=vs.85%29.aspx
+	2. Read section USAGE
 	3. Ready to use.
 	
 USAGE
